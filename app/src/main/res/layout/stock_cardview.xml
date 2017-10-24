@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:apps="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    android:paddingTop="16dp"
+    tools:context="com.chickendiet.chickendiet.MainActivity">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardlayout_view"
+        android:layout_width="match_parent"
+        apps:cardElevation="5dp"
+        apps:cardMaxElevation="15dp"
+        android:layout_height="175dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="175dp"
+                android:id="@+id/layout_car_info"
+                android:background="#a6a6a6">
+
+                <LinearLayout
+                    android:layout_width="120dp"
+                    android:layout_height="175dp">
+
+                    <ImageView
+                        android:id="@+id/imagecard"
+                        android:layout_width="120dp"
+                        android:layout_height="175dp"
+                        android:background="#ffffff"
+                        android:scaleType="centerCrop" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ingredientdetails_layout"
+                    android:layout_width="265dp"
+                    android:layout_height="175dp"
+                    android:background="#ffffff"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/ingredienttitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="Ingredient name"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/ingredient_energy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:fontFamily="sans-serif"
+                        android:text="Energy (%):"
+                        android:textSize="12sp"
+                        android:textColor="#6b8e23" />
+
+                    <TextView
+                        android:id="@+id/ingredient_crudeprotein"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:fontFamily="sans-serif"
+                        android:text="Crude protein (%):"
+                        android:textSize="12sp"
+                        android:textColor="#6b8e23" />
+
+                    <TextView
+                        android:id="@+id/ingredient_crudefibre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:fontFamily="sans-serif"
+                        android:text="Crude Fibre (%):"
+                        android:textSize="12sp"
+                        android:textColor="#6b8e23" />
+
+                    <TextView
+                        android:id="@+id/ingredient_lysine"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:fontFamily="sans-serif"
+                        android:text="Lysine (%):"
+                        android:textSize="12sp"
+                        android:textColor="#6b8e23" />
+
+                    <TextView
+                        android:id="@+id/ingredient_methionine"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:fontFamily="sans-serif"
+                        android:text="Methionine (%):"
+                        android:textSize="12sp"
+                        android:textColor="#6b8e23" />
+
+                    <TextView
+                        android:id="@+id/ingredient_calcium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:fontFamily="sans-serif"
+                        android:text="Calcium (%):"
+                        android:textSize="12sp"
+                        android:textColor="#6b8e23" />
+
+                    <TextView
+                        android:id="@+id/ingredient_phosphorus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:fontFamily="sans-serif"
+                        android:text="Phosphorus (%):"
+                        android:textSize="12sp"
+                        android:textColor="#6b8e23" />
+
+                    <TextView
+                        android:id="@+id/ingredient_fats"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:fontFamily="sans-serif"
+                        android:text="Fats (%):"
+                        android:textSize="12sp"
+                        android:textColor="#6b8e23" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/cardviewprogressbar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

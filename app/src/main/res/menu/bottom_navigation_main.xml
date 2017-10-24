@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/nav_home"
+        android:enabled="true"
+        android:title="Home"
+        android:icon="@drawable/ic_home"
+      >
+    </item>
+
+    <item
+        android:id="@+id/nav_stock"
+        android:enabled="true"
+        android:title="Stock"
+        android:icon="@drawable/ic_stock"
+        >
+    </item>
+
+    <item
+        android:id="@+id/nav_formulate"
+        android:enabled="true"
+        android:title="Formulate"
+        android:icon="@drawable/ic_formulate"
+        >
+    </item>
+
+    <item
+        android:id="@+id/nav_saved"
+        android:enabled="true"
+        android:title="Saved"
+        android:icon="@drawable/ic_save"
+      >
+    </item>
+
+    <item
+        android:id="@+id/nav_More"
+        android:enabled="true"
+        android:title="More"
+        android:icon="@drawable/ic_more"
+        >
+    </item>
+</menu>

@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.chickendiet.chickendiet.ResultActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp">
+
+        <LinearLayout
+            android:id="@+id/layout_pieChart"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/layout_pieChart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shrinkColumns="1"
+            android:stretchColumns="*">
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name :"
+                android:textSize="13sp"
+                android:textColor="#6b8e23"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Qty\n Used"
+                android:textSize="13sp"
+                android:textColor="#6b8e23"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Qty\n Required"
+                android:textSize="13sp"
+                android:textColor="#6b8e23"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status"
+                android:textSize="13sp"
+                android:textColor="#6b8e23"
+                android:gravity="center|center_vertical"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Energy (kcal/kg) :"
+                android:layout_marginTop="5dp"
+                android:textSize="11sp"
+                android:textColor="#6b8e23"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_marginTop="5dp"
+                android:textSize="11sp"
+                android:textColor="#6b8e23"
+                android:gravity="center"
+                android:id="@+id/energy_used"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_marginTop="5dp"
+                android:textSize="11sp"
+                android:textColor="#6b8e23"
+                android:gravity="center"
+                android:id="@+id/energy_required"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="None"
+                android:layout_marginTop="5dp"
+                android:textSize="11sp"
+                android:textColor="#6b8e23"
+                android:gravity="center"
+                android:id="@+id/energy_status"/>
+
+
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Protein(%cp) :"
+                android:layout_marginTop="5dp"
+                android:textSize="11sp"
+                android:textColor="#6b8e23"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_marginTop="5dp"
+                android:textSize="11sp"
+                android:textColor="#6b8e23"
+                android:gravity="center"
+                android:id="@+id/protein_used"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_marginTop="5dp"
+                android:textSize="11sp"
+                android:textColor="#6b8e23"
+                android:gravity="center"
+                android:id="@+id/protein_required"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="None"
+                android:layout_marginTop="5dp"
+                android:textSize="11sp"
+                android:textColor="#6b8e23"
+                android:gravity="center"
+                android:id="@+id/protein_status"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ether Extract(%) :"
+                android:layout_marginTop="5dp"
+                android:textSize="11sp"
+                android:textColor="#6b8e23"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_marginTop="5dp"
+                android:textSize="11sp"
+                android:textColor="#6b8e23"
+                android:gravity="center"
+                android:id="@+id/ether_used"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_marginTop="5dp"
+                android:textSize="11sp"
+                android:textColor="#6b8e23"
+                android:gravity="center"
+                android:id="@+id/ether_required"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="None"
+                android:layout_marginTop="5dp"
+                android:textSize="11sp"
+                android:textColor="#6b8e23"
+                android:gravity="center"
+                android:id="@+id/ether_status"/>
+
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fibre(%) :"
+                android:layout_marginTop="5dp"
+                android:textSize="11sp"
+                android:textColor="#6b8e23"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_marginTop="5dp"
+                android:textSize="11sp"
+                android:textColor="#6b8e23"
+                android:gravity="center"
+                android:id="@+id/fibre_used"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_marginTop="5dp"
+                android:textSize="11sp"
+                android:textColor="#6b8e23"
+                android:gravity="center"
+                android:id="@+id/fibre_required"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="None"
+                android:layout_marginTop="5dp"
+                android:textSize="11sp"
+                android:textColor="#6b8e23"
+                android:gravity="center"
+                android:id="@+id/fibre_status"/>
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Ingredient\n Used(kg):"
+                android:layout_marginTop="5dp"
+                android:textSize="11sp"
+                android:textColor="#6b8e23"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_marginTop="5dp"
+                android:textSize="11sp"
+                android:textColor="#6b8e23"
+                android:gravity="center"
+                android:id="@+id/total_used"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100"
+                android:layout_marginTop="5dp"
+                android:textSize="11sp"
+                android:textColor="#6b8e23"
+                android:gravity="center"
+                android:id="@+id/total_required"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="None"
+                android:layout_marginTop="5dp"
+                android:textSize="11sp"
+                android:textColor="#6b8e23"
+                android:gravity="center"
+                android:id="@+id/total_status"/>
+        </TableRow>
+        </TableLayout>
+    </RelativeLayout>
+</ScrollView>
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:textColor="#6b8e23"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/background_2"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>
