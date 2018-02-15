@@ -13,21 +13,21 @@
     <android.support.v7.widget.CardView
         android:id="@+id/cardlayout_view"
         android:layout_width="match_parent"
-        apps:cardElevation="5dp"
-        apps:cardMaxElevation="15dp"
         android:layout_height="175dp"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        apps:cardElevation="5dp"
+        apps:cardMaxElevation="15dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <LinearLayout
+                android:id="@+id/layout_car_info"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
-                android:id="@+id/layout_car_info"
                 android:background="#a6a6a6">
 
                 <LinearLayout
@@ -54,9 +54,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
+                        android:fontFamily="sans-serif"
                         android:text="Ingredient name"
                         android:textSize="15sp"
-                        android:fontFamily="sans-serif"
                         android:textStyle="bold" />
 
                     <TextView
@@ -65,9 +65,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:fontFamily="sans-serif"
-                        android:text="Energy (%):"
-                        android:textSize="12sp"
-                        android:textColor="#6b8e23" />
+                        android:text="Energy :"
+                        android:textColor="#6b8e23"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/ingredient_crudeprotein"
@@ -76,8 +76,8 @@
                         android:layout_marginLeft="5dp"
                         android:fontFamily="sans-serif"
                         android:text="Crude protein (%):"
-                        android:textSize="12sp"
-                        android:textColor="#6b8e23" />
+                        android:textColor="#6b8e23"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/ingredient_crudefibre"
@@ -86,8 +86,8 @@
                         android:layout_marginLeft="5dp"
                         android:fontFamily="sans-serif"
                         android:text="Crude Fibre (%):"
-                        android:textSize="12sp"
-                        android:textColor="#6b8e23" />
+                        android:textColor="#6b8e23"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/ingredient_lysine"
@@ -96,8 +96,8 @@
                         android:layout_marginLeft="5dp"
                         android:fontFamily="sans-serif"
                         android:text="Lysine (%):"
-                        android:textSize="12sp"
-                        android:textColor="#6b8e23" />
+                        android:textColor="#6b8e23"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/ingredient_methionine"
@@ -106,8 +106,8 @@
                         android:layout_marginLeft="5dp"
                         android:fontFamily="sans-serif"
                         android:text="Methionine (%):"
-                        android:textSize="12sp"
-                        android:textColor="#6b8e23" />
+                        android:textColor="#6b8e23"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/ingredient_calcium"
@@ -116,8 +116,8 @@
                         android:layout_marginLeft="5dp"
                         android:fontFamily="sans-serif"
                         android:text="Calcium (%):"
-                        android:textSize="12sp"
-                        android:textColor="#6b8e23" />
+                        android:textColor="#6b8e23"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/ingredient_phosphorus"
@@ -126,8 +126,8 @@
                         android:layout_marginLeft="5dp"
                         android:fontFamily="sans-serif"
                         android:text="Phosphorus (%):"
-                        android:textSize="12sp"
-                        android:textColor="#6b8e23" />
+                        android:textColor="#6b8e23"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/ingredient_fats"
@@ -136,8 +136,8 @@
                         android:layout_marginLeft="5dp"
                         android:fontFamily="sans-serif"
                         android:text="Fats (%):"
-                        android:textSize="12sp"
-                        android:textColor="#6b8e23" />
+                        android:textColor="#6b8e23"
+                        android:textSize="12sp" />
 
                 </LinearLayout>
             </LinearLayout>
