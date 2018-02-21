@@ -21,11 +21,14 @@ import static android.R.attr.button;
 public class MainActivity extends AppCompatActivity {
     private Button buttonBrooder, buttonLayer, buttonGrower;
     Context context = this;
+    DbHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        dbHelper = new DbHelper(this);
+        dbHelper.deletingsinlecrop_whole();
 
         buttonBrooder = (Button)findViewById(R.id.btn_brooder);
         buttonBrooder.setOnClickListener(new View.OnClickListener() {
