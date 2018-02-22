@@ -207,6 +207,7 @@ public class FormulateActivity extends AppCompatActivity {
                         dbHelper.update_bird_selection("bird",0);
                     }
                 }
+//                Toast.makeText(FormulateActivity.this,"Grower" + isGrower_chk,Toast.LENGTH_SHORT).show();;
 
             }
         });
@@ -223,11 +224,12 @@ public class FormulateActivity extends AppCompatActivity {
                     int new_form = cursor.getInt(2) + 1;
                     dbHelper.update_bird_selection("Layer",new_form);
                 }else{
-                    if(isGrower_chk){
+                    if(isLayer_chk){
                         isLayer_chk = false;
                         dbHelper.update_bird_selection("bird",0);
                     }
                 }
+//                Toast.makeText(FormulateActivity.this,"Layer" + isGrower_chk,Toast.LENGTH_SHORT).show();;
             }
         });
 
@@ -243,27 +245,33 @@ public class FormulateActivity extends AppCompatActivity {
                     int new_form = cursor.getInt(2) + 1;
                     dbHelper.update_bird_selection("Brooder",new_form);
                 }else{
-                    if(isGrower_chk){
+                    if(isBrooder_chk){
                         isBrooder_chk = false;
                         dbHelper.update_bird_selection("bird",0);
                     }
                 }
+//                Toast.makeText(FormulateActivity.this,"Brooder" + isGrower_chk,Toast.LENGTH_SHORT).show();;
             }
         });
+
     }
 
     public void openResultActivity(View view) {
 
-        if(!(ismaize_chk || isrice_grain_chk || isrice_bran_chk || issorghum_chk || iscake_chk || iscotton_chk || issesame_chk || isbean_seeds_chk)){
-           Toast.makeText(FormulateActivity.this,"Select atleast a crop",Toast.LENGTH_SHORT).show();;
+        if((ismaize_chk || isrice_grain_chk || isrice_bran_chk || issorghum_chk || iscake_chk || iscotton_chk || issesame_chk || isbean_seeds_chk)){
+            if((isLayer_chk||isGrower_chk||isBrooder_chk)){
+                Intent intent = new Intent(this, ResultActivity.class);
+                startActivity(intent);
+            }else{
+                Toast.makeText(FormulateActivity.this,"Select atleast a bird category",Toast.LENGTH_SHORT).show();;
+            }
+
+        }else{
+            Toast.makeText(FormulateActivity.this,"Select atleast a crop",Toast.LENGTH_SHORT).show();;
         }
 
-        if(isLayer_chk||isGrower_chk||isBrooder_chk){
-            Intent intent = new Intent(this, ResultActivity.class);
-            startActivity(intent);
-        }
 
-        Toast.makeText(FormulateActivity.this,"Select atleast a bird category",Toast.LENGTH_SHORT).show();;
+
 
     }
 }
