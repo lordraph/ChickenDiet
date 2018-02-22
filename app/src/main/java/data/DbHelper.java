@@ -77,7 +77,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
         String NUTRIENT_REQUIREMENT_TABLE = "create table " + TABLE_NAME_NUTRIENT_REQUIREMENT + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,bird_class TEXT,energy INTEGER,protein REAL,phosphorus REAL,calcium REAL)" ;
 
-        String save_table = "create table " + TABLE_NAME_SAVING + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_DESCR + " TEXT," +  COLUMN_FORMU + " INTEGER," + COLUMN_VALUE + " REAL)";
+        String save_table = "create table " + TABLE_NAME_SAVING + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_DESCR + " TEXT," +  COLUMN_FORMU + " TEXT," + COLUMN_VALUE + " REAL)";
 
         String FORM_TABLE = "create table " + TABLE_NAME_FORM_NO + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_INT_NO + " INTEGER)" ;
 
@@ -103,7 +103,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
         db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,energy,protein,ether_extract,fibre,Qty_Avail,price) VALUES ('Sorghum grains',3288,8.8,2.9,2.3,50,100.00)");
 
-        db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,energy,protein,ether_extract,fibre,Qty_Avail,price) VALUES ('Groundnut cake',2.5,42,7.3,12,150,350.00)");
+        db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,energy,protein,ether_extract,fibre,Qty_Avail,price) VALUES ('Groundnut cake',2500,42,7.3,12,150,350.00)");
         db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,energy,protein,ether_extract,fibre,Qty_Avail,price) VALUES ('Cotton seed',2320,40.9,3.9,12,120,120.00)");
 
         db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,energy,protein,ether_extract,fibre,Qty_Avail,price) VALUES ('Sesame seed or meal',2210,43.8,6.5,7,70,200.00)");
@@ -258,7 +258,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     }
 
-    public boolean insertdata_save(String descr_id, int form_no, double value){
+    public boolean insertdata_save(String descr_id, String form_no, double value){
         SQLiteDatabase db = this.getReadableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_DESCR,descr_id);
@@ -278,12 +278,12 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
 
-    public boolean insertdata_listView(String list_cate, String text_info, int text_int_info){
+    public boolean insertdata_listView(String list_cate, String text_info){
         SQLiteDatabase db = this.getReadableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_BIRD_NO,list_cate);
         contentValues.put(COLUMN_INT_TExT,text_info);
-        contentValues.put(COLUMN_INT_REAL,text_int_info);
+        contentValues.put(COLUMN_INT_REAL,1);
 
 
         long checkifdata = db.insert(TABLE_NAME_LIST_VIEW,null,contentValues);
@@ -294,6 +294,8 @@ public class DbHelper extends SQLiteOpenHelper {
         }else{
             return true;
         }
+
+
     }
 
     public Cursor querry_listview_table(){
@@ -303,11 +305,8 @@ public class DbHelper extends SQLiteOpenHelper {
         return  cursor;
     }
 
-    public boolean deletelist_view_row(String crop_del){
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_NAME_LIST_VIEW,COLUMN_INT_TExT + "=?",new String[]{crop_del});
-        return true;
-    }
+
+
 
     public Cursor querry_save_table(){
         SQLiteDatabase db = this.getReadableDatabase();
@@ -331,11 +330,15 @@ public class DbHelper extends SQLiteOpenHelper {
 
     }
 
-
-
     public boolean deletingsinlecrop(String crop_del){
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_NAME_INGREDIENT_SELECTION,COLUMN_SELECT_INGREDIENT + "=?",new String[]{crop_del});
+        return true;
+    }
+
+    public boolean deletelist_view_row(String crop_del){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_NAME_LIST_VIEW,COLUMN_INT_TExT + "=?",new String[]{crop_del});
         return true;
     }
 
@@ -421,7 +424,3 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
 }
-
-
-
-

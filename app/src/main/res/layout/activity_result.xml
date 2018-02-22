@@ -21,8 +21,8 @@
         <LinearLayout
             android:id="@+id/layout_pieChart"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:orientation="horizontal">
+            android:layout_height="200dp"
+            android:orientation="vertical">
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -58,7 +58,7 @@
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="200dp">
+                android:layout_height="180dp">
 
                 <TableLayout
                     android:layout_width="match_parent"
@@ -340,6 +340,7 @@
         android:textColor="#6b8e23"
         android:layout_marginBottom="5dp"
         android:background="@drawable/background_2"
+        android:onClick="openFeedSummaryActivity"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"/>
 </RelativeLayout>

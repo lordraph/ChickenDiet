@@ -51,8 +51,8 @@ public class FormulateActivity extends AppCompatActivity {
                     ismaize_chk = true;
                     dbHelper.insertdata("Maize",0);
 //                    isnonechecked = true;
-                    Cursor cursor = dbHelper.querry_Selector_table();
-//                    Toast.makeText(Stock.this,"No of rows: " + cursor.getCount(),Toast.LENGTH_SHORT).show();
+//                    Cursor cursor = dbHelper.querry_Selector_table();
+//                    Toast.makeText(FormulateActivity.this,"No of rows: " + cursor.getCount(),Toast.LENGTH_SHORT).show();
 
                 }else {
                     if(ismaize_chk){
