@@ -24,6 +24,57 @@
             android:layout_height="250dp"
             android:orientation="horizontal">
 
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*"
+                android:shrinkColumns="1"
+                >
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ingredient"
+                        android:textSize="15sp"
+                        android:textColor="#163317"
+                        android:gravity="center"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Qty Used"
+                        android:textSize="15sp"
+                        android:textColor="#163317"
+                        android:gravity="center"
+                        android:textStyle="bold"/>
+
+                </TableRow>
+
+
+
+            </TableLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="*"
+                    android:shrinkColumns="1"
+                    android:id="@+id/ingridient_table">
+
+
+
+
+
+
+                </TableLayout>
+            </ScrollView>
+
         </LinearLayout>
 
         <TableLayout
