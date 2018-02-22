@@ -21,8 +21,59 @@
         <LinearLayout
             android:id="@+id/layout_pieChart"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:orientation="horizontal">
+            android:layout_height="200dp"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*"
+                android:shrinkColumns="1"
+                >
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ingredient"
+                        android:textSize="15sp"
+                        android:textColor="#163317"
+                        android:gravity="center"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Qty Used"
+                        android:textSize="15sp"
+                        android:textColor="#163317"
+                        android:gravity="center"
+                        android:textStyle="bold"/>
+
+                </TableRow>
+
+
+
+            </TableLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="180dp">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="*"
+                    android:shrinkColumns="1"
+                    android:id="@+id/ingridient_table">
+
+
+
+
+
+
+                </TableLayout>
+            </ScrollView>
 
         </LinearLayout>
 
@@ -289,6 +340,7 @@
         android:textColor="#6b8e23"
         android:layout_marginBottom="5dp"
         android:background="@drawable/background_2"
+        android:onClick="openFeedSummaryActivity"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"/>
 </RelativeLayout>
