@@ -23,18 +23,17 @@ public class FormulateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_formulate);
         dbHelper = new com.chickendiet.chickendiet.DbHelper(this);
 
-        checkGrower = (CheckBox)findViewById(R.id.check_grower);
-        checkLayer = (CheckBox)findViewById(R.id.check_layer);
-        checkBrooder = (CheckBox)findViewById(R.id.check_brooder);
+        checkGrower = findViewById(R.id.check_grower);
+        checkLayer = findViewById(R.id.check_layer);
+        checkBrooder = findViewById(R.id.check_brooder);
 
-        maize_chk = (CheckBox)findViewById(R.id.check_maize);
-        rice_grain_chk = (CheckBox)findViewById(R.id.check_rice);
-        rice_bran_chk = (CheckBox)findViewById(R.id.check_ricebran);
-        sorghum_chk = (CheckBox)findViewById(R.id.check_sorghum);
-        cake_chk = (CheckBox)findViewById(R.id.check_groundnutcake);
-        cotton_chk = (CheckBox)findViewById(R.id.check_cotton_seed);
-        sesame_chk = (CheckBox)findViewById(R.id.check_sesame_seed);
-        bean_seeds_chk = (CheckBox)findViewById(R.id.check_soyabean);
+        maize_chk = findViewById(R.id.check_maize);
+        rice_grain_chk = findViewById(R.id.check_rice);
+        rice_bran_chk = findViewById(R.id.check_ricebran);
+        sorghum_chk = findViewById(R.id.check_sorghum);
+        cake_chk = findViewById(R.id.check_groundnutcake);
+        cotton_chk = findViewById(R.id.check_cotton_seed);
+        bean_seeds_chk = findViewById(R.id.check_soyabean);
 
         selectChicken();
         checkSelectedCrop();
@@ -151,23 +150,6 @@ public class FormulateActivity extends AppCompatActivity {
             }
         });
 
-        sesame_chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    issesame_chk = true;
-                    dbHelper.insertdata("Sesame seed or meal",0);
-//                    isnonechecked = true;
-                }else {
-                    if(issesame_chk){
-                        dbHelper.deletingsinlecrop("Sesame seed or meal");
-                    }
-                    issesame_chk = false;
-//                    isnonechecked = false;
-                }
-            }
-        });
-
         bean_seeds_chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -263,11 +245,11 @@ public class FormulateActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, ResultActivity.class);
                 startActivity(intent);
             }else{
-                Toast.makeText(FormulateActivity.this,"Select atleast a bird category",Toast.LENGTH_SHORT).show();;
+                Toast.makeText(FormulateActivity.this, "Select at least a bird category", Toast.LENGTH_SHORT).show();
             }
 
         }else{
-            Toast.makeText(FormulateActivity.this,"Select atleast a crop",Toast.LENGTH_SHORT).show();;
+            Toast.makeText(FormulateActivity.this, "Select at least a crop", Toast.LENGTH_SHORT).show();
         }
 
 

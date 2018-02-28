@@ -1,4 +1,4 @@
-package com.android.chickenfeedformulation.data;
+package com.chickendiet.data;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -56,10 +56,7 @@ public class DbHelper extends SQLiteOpenHelper {
     private static final String COLUMN_INT_TExT= "meme_real";
 
 
-
-
-
-    public database(Context context) {
+    public DbHelper(Context context) {
 
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
 
@@ -138,11 +135,7 @@ public class DbHelper extends SQLiteOpenHelper {
         long checkifdata = db.insert(TABLE_NAME_INGREDIENT_SELECTION, null, contentValues);
         db.close();
 
-        if (checkifdata == -1) {
-            return false;
-        } else {
-            return true;
-        }
+        return checkifdata != -1;
     }
 
 
@@ -155,11 +148,7 @@ public class DbHelper extends SQLiteOpenHelper {
         long checkifdata = db.insert(TABLE_NAME_BIRD_SELECTION,null,contentValues);
         db.close();
 
-        if(checkifdata==-1){
-            return false;
-        }else{
-            return true;
-        }
+        return checkifdata != -1;
 
     }
 
@@ -172,11 +161,7 @@ public class DbHelper extends SQLiteOpenHelper {
         long checkifdata = db.update(TABLE_NAME_BIRD_SELECTION,contentValues,null,null);
         db.close();
 
-        if(checkifdata==-1){
-            return false;
-        }else{
-            return true;
-        }
+        return checkifdata != -1;
 
     }
 
@@ -189,11 +174,7 @@ public class DbHelper extends SQLiteOpenHelper {
         long checkifdata = db.update(TABLE_NAME_BIRD_SELECTION,contentValues,null,null);
         db.close();
 
-        if(checkifdata==-1){
-            return false;
-        }else{
-            return true;
-        }
+        return checkifdata != -1;
 
     }
 
@@ -207,11 +188,7 @@ public class DbHelper extends SQLiteOpenHelper {
         long checkifdata = db.insert(TABLE_NAME_SAVING,null,contentValues);
         db.close();
 
-        if(checkifdata==-1){
-            return false;
-        }else{
-            return true;
-        }
+        return checkifdata != -1;
 
     }
 
@@ -227,11 +204,7 @@ public class DbHelper extends SQLiteOpenHelper {
         long checkifdata = db.insert(TABLE_NAME_NUTRIENT_REQUIREMENT,null,contentValues);
         db.close();
 
-        if(checkifdata==-1){
-            return false;
-        }else{
-            return true;
-        }
+        return checkifdata != -1;
 
     }
 
@@ -250,11 +223,7 @@ public class DbHelper extends SQLiteOpenHelper {
         long checkifdata = db.insert(TABLE_NAME_NUTRIENT_CONTENT,null,contentValues);
         db.close();
 
-        if(checkifdata==-1){
-            return false;
-        }else{
-            return true;
-        }
+        return checkifdata != -1;
 
     }
 
@@ -268,11 +237,7 @@ public class DbHelper extends SQLiteOpenHelper {
         long checkifdata = db.insert(TABLE_NAME_SAVING,null,contentValues);
         db.close();
 
-        if(checkifdata==-1){
-            return false;
-        }else{
-            return true;
-        }
+        return checkifdata != -1;
 
 
     }
@@ -289,11 +254,7 @@ public class DbHelper extends SQLiteOpenHelper {
         long checkifdata = db.insert(TABLE_NAME_LIST_VIEW,null,contentValues);
         db.close();
 
-        if(checkifdata==-1){
-            return false;
-        }else{
-            return true;
-        }
+        return checkifdata != -1;
 
 
     }
