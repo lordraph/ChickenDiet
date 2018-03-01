@@ -32,15 +32,6 @@ import java.util.ArrayList;
         private int lastPosition = -1;
 
         /**
-         * Holds variables in a View
-         */
-        private static class ViewHolder {
-            TextView ingredientname;
-            ImageView image;
-            ProgressBar dialog;
-        }
-
-        /**
          * Default constructor for the PersonListAdapter
          * @param context
          * @param resource
@@ -60,11 +51,17 @@ import java.util.ArrayList;
 
             //get the persons information
             String ingredientname = getItem(position).getIngredientname();
+            String energy = getItem(position).getEnergy();
+            String crudeprotein = getItem(position).getCrudeprotein();
+            String crudefibre = getItem(position).getCrudefibre();
+            String lysine = getItem(position).getLysine();
+            String methionine = getItem(position).getMethionine();
+            String calcium = getItem(position).getCalcium();
+            String phosphorus = getItem(position).getPhosphorus();
+            String fats = getItem(position).getFats();
             String imgUrl = getItem(position).getImgURL();
 
-
             try{
-
 
                 //create the view result for showing the animation
                 final View result;
@@ -76,9 +73,17 @@ import java.util.ArrayList;
                     LayoutInflater inflater = LayoutInflater.from(mContext);
                     convertView = inflater.inflate(mResource, parent, false);
                     holder= new ViewHolder();
-                    holder.ingredientname = (TextView) convertView.findViewById(R.id.ingredienttitle);
-                    holder.image = (ImageView) convertView.findViewById(R.id.imagecard);
-                    holder.dialog = (ProgressBar) convertView.findViewById(R.id.cardviewprogressbar);
+                    holder.ingredientname = convertView.findViewById(R.id.ingredienttitle);
+                    holder.energy = convertView.findViewById(R.id.ingredient_energy);
+                    holder.crudeprotein = convertView.findViewById(R.id.ingredient_crudeprotein);
+                    holder.crudefibre = convertView.findViewById(R.id.ingredient_crudefibre);
+                    holder.lysine = convertView.findViewById(R.id.ingredient_lysine);
+                    holder.methionine = convertView.findViewById(R.id.ingredient_methionine);
+                    holder.calcium = convertView.findViewById(R.id.ingredient_calcium);
+                    holder.phosphorus = convertView.findViewById(R.id.ingredient_phosphorus);
+                    holder.fats = convertView.findViewById(R.id.ingredient_fats);
+                    holder.image = convertView.findViewById(R.id.imagecard);
+                    holder.dialog = convertView.findViewById(R.id.cardviewprogressbar);
 
                     result = convertView;
 
@@ -159,5 +164,14 @@ import java.util.ArrayList;
 
             ImageLoader.getInstance().init(config);
             // END - UNIVERSAL IMAGE LOADER SETUP
+        }
+
+        /**
+         * Holds variables in a View
+         */
+        private static class ViewHolder {
+            TextView ingredientname, energy, crudeprotein, crudefibre, lysine, methionine, calcium, phosphorus, fats;
+            ImageView image;
+            ProgressBar dialog;
         }
  }

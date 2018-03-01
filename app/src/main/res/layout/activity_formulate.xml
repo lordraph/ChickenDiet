@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     tools:context="com.chickendiet.chickendiet.FormulateActivity">
 
     <TextView
@@ -195,14 +196,6 @@
                     android:text="Select"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:gravity="center"
-                    android:text="Qty Available(Kg)"
-                    android:textStyle="bold" />
-
             </TableRow>
         </TableLayout>
 
@@ -249,25 +242,49 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center" />
 
-                        <EditText
-                            android:id="@+id/editText_maize"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="center_horizontal"
-                            android:inputType="number" />
                     </TableRow>
 
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:background="#fff">
+
+                        <ImageView
+                            android:id="@+id/image_bonemeal"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/bonemeal" />
+
+                        <TextView
+                            android:id="@+id/bonemeal_stock"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_horizontal"
+                            android:paddingLeft="20dp"
+                            android:text="Bone Meal"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/check_bonemeal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
                         android:background="#fff">
 
                         <ImageView
                             android:id="@+id/image_cotton_seed"
                             android:layout_width="0dp"
                             android:layout_height="40dp"
-                            android:src="@drawable/cotton_seed" />
+                            android:src="@drawable/cottonseedmeal" />
 
                         <TextView
                             android:id="@+id/cotton_seed_stock"
@@ -285,25 +302,19 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center" />
 
-                        <EditText
-                            android:id="@+id/editText_cotton_seed"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="center_horizontal"
-                            android:inputType="number" />
                     </TableRow>
 
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
                         android:background="#fff">
 
                         <ImageView
                             android:id="@+id/image_rice"
                             android:layout_width="0dp"
                             android:layout_height="40dp"
-                            android:src="@drawable/rice" />
+                            android:src="@drawable/brewers" />
 
                         <TextView
                             android:id="@+id/rice_stock"
@@ -312,7 +323,7 @@
                             android:layout_gravity="center_vertical"
                             android:gravity="center_horizontal"
                             android:paddingLeft="20dp"
-                            android:text="Rice"
+                            android:text="Brewers Dried Grain"
                             android:textSize="12sp" />
 
                         <CheckBox
@@ -321,63 +332,19 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center" />
 
-                        <EditText
-                            android:id="@+id/editText_rice"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="center_horizontal"
-                            android:inputType="number" />
-
                     </TableRow>
 
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#fff">
-
-                        <ImageView
-                            android:id="@+id/image_sesame_seed"
-                            android:layout_width="0dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/sesame_seed" />
-
-                        <TextView
-                            android:id="@+id/sesame_seed_stock"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="center_horizontal"
-                            android:paddingLeft="20dp"
-                            android:text="Sesame Seed"
-                            android:textSize="12sp" />
-
-                        <CheckBox
-                            android:id="@+id/check_sesame_seed"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center" />
-
-                        <EditText
-                            android:id="@+id/editText_sesame_seed"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="center_horizontal"
-                            android:inputType="number" />
-
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
                         android:background="#fff">
 
                         <ImageView
                             android:id="@+id/image_sorghum"
                             android:layout_width="0dp"
                             android:layout_height="40dp"
-                            android:src="@drawable/sorghum_grains" />
+                            android:src="@drawable/acha" />
 
                         <TextView
                             android:id="@+id/sorghum_stock"
@@ -386,7 +353,7 @@
                             android:layout_gravity="center_vertical"
                             android:gravity="center_horizontal"
                             android:paddingLeft="20dp"
-                            android:text="Sorghum Grains"
+                            android:text="Acha"
                             android:textSize="12sp" />
 
                         <CheckBox
@@ -395,35 +362,28 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center" />
 
-                        <EditText
-                            android:id="@+id/editText_sorghum"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="center_horizontal"
-                            android:inputType="number" />
-
                     </TableRow>
 
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
                         android:background="#fff">
 
                         <ImageView
-                            android:id="@+id/image_soyabean"
+                            android:id="@+id/image_bloodmeal"
                             android:layout_width="0dp"
                             android:layout_height="40dp"
-                            android:src="@drawable/soyabean_seed" />
+                            android:src="@drawable/bloodmeal" />
 
                         <TextView
-                            android:id="@+id/soyabean_stock"
+                            android:id="@+id/bloodmeal_stock"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:gravity="center_horizontal"
                             android:paddingLeft="20dp"
-                            android:text="Soyabean Seed"
+                            android:text="Blood Meal"
                             android:textSize="12sp" />
 
                         <CheckBox
@@ -432,211 +392,171 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center" />
 
-                        <EditText
-                            android:id="@+id/editText_soyabean"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="center_horizontal"
-                            android:inputType="number" />
 
                     </TableRow>
-
-                    <!--<TableRow-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:background="#fff">-->
-
-                        <!--<ImageView-->
-                            <!--android:id="@+id/image_CassavaMeal"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="40dp"-->
-                            <!--android:src="@drawable/cassavameal" />-->
-
-                        <!--<TextView-->
-                            <!--android:id="@+id/cassavameal_stock"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:paddingLeft="20dp"-->
-                            <!--android:text="Cassava Meal"-->
-                            <!--android:textSize="12sp" />-->
-
-                        <!--<CheckBox-->
-                            <!--android:id="@+id/check_cassavameal"-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center" />-->
-
-                        <!--<EditText-->
-                            <!--android:id="@+id/editText_cassavameal"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:inputType="number" />-->
-
-                    <!--</TableRow>-->
-
-                    <!--<TableRow-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:background="#fff">-->
-
-                        <!--<ImageView-->
-                            <!--android:id="@+id/image_CassavaPeel"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="40dp"-->
-                            <!--android:src="@drawable/cassavapeel" />-->
-
-                        <!--<TextView-->
-                            <!--android:id="@+id/cassavapeel_stock"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:paddingLeft="20dp"-->
-                            <!--android:text="Cassava Peel"-->
-                            <!--android:textSize="12sp" />-->
-
-                        <!--<CheckBox-->
-                            <!--android:id="@+id/check_cassavapeel"-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center" />-->
-
-                        <!--<EditText-->
-                            <!--android:id="@+id/editText_cassavapeel"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:inputType="number" />-->
-
-                    <!--</TableRow>-->
-
-                    <!--<TableRow-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:background="#fff">-->
-
-                        <!--<ImageView-->
-                            <!--android:id="@+id/image_CottonSeedMeal"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="40dp"-->
-                            <!--android:src="@drawable/cottonseedmeal" />-->
-
-                        <!--<TextView-->
-                            <!--android:id="@+id/cottonseedmeal_stock"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:paddingLeft="20dp"-->
-                            <!--android:text="Cotton Seed Meal"-->
-                            <!--android:textSize="12sp" />-->
-
-                        <!--<CheckBox-->
-                            <!--android:id="@+id/check_cottonseedmeal"-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center" />-->
-
-                        <!--<EditText-->
-                            <!--android:id="@+id/editText_cottonseedmeal"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:inputType="number" />-->
-
-                    <!--</TableRow>-->
-
-                    <!--<TableRow-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:background="#fff">-->
-
-                        <!--<ImageView-->
-                            <!--android:id="@+id/image_Beniseed"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="40dp"-->
-                            <!--android:src="@drawable/beniseed" />-->
-
-                        <!--<TextView-->
-                            <!--android:id="@+id/beniseed_stock"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:paddingLeft="20dp"-->
-                            <!--android:text="Beniseed"-->
-                            <!--android:textSize="12sp" />-->
-
-                        <!--<CheckBox-->
-                            <!--android:id="@+id/check_beniseed"-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center" />-->
-
-                        <!--<EditText-->
-                            <!--android:id="@+id/editText_beniseed"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:inputType="number" />-->
-
-                    <!--</TableRow>-->
-
-                    <!--<TableRow-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:background="#fff">-->
-
-                        <!--<ImageView-->
-                            <!--android:id="@+id/image_FishMeal"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="40dp"-->
-                            <!--android:src="@drawable/fishmeal" />-->
-
-                        <!--<TextView-->
-                            <!--android:id="@+id/fishmeal_stock"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:paddingLeft="20dp"-->
-                            <!--android:text="Fish Meal"-->
-                            <!--android:textSize="12sp" />-->
-
-                        <!--<CheckBox-->
-                            <!--android:id="@+id/check_fishmeal"-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center" />-->
-
-                        <!--<EditText-->
-                            <!--android:id="@+id/editText_fishmeal"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:inputType="number" />-->
-
-                    <!--</TableRow>-->
 
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:background="#fff">
+
+                        <ImageView
+                            android:id="@+id/image_CassavaMeal"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/cassavameal" />
+
+                        <TextView
+                            android:id="@+id/cassavameal_stock"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_horizontal"
+                            android:paddingLeft="20dp"
+                            android:text="Cassava Meal"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/check_cassavameal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:background="#fff">
+
+                        <ImageView
+                            android:id="@+id/image_CassavaPeel"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/cassavapeel" />
+
+                        <TextView
+                            android:id="@+id/cassavapeel_stock"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_horizontal"
+                            android:paddingLeft="20dp"
+                            android:text="Cassava Peel"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/check_cassavapeel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:background="#fff">
+
+                        <ImageView
+                            android:id="@+id/image_CottonSeedMeal"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/cottonseedmeal" />
+
+                        <TextView
+                            android:id="@+id/cottonseedmeal_stock"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_horizontal"
+                            android:paddingLeft="20dp"
+                            android:text="Cotton Seed Meal"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/check_cottonseedmeal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center" />
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:background="#fff">
+
+                        <ImageView
+                            android:id="@+id/image_Beniseed"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/beniseed" />
+
+                        <TextView
+                            android:id="@+id/beniseed_stock"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_horizontal"
+                            android:paddingLeft="20dp"
+                            android:text="Beniseed"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/check_beniseed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:background="#fff">
+
+                        <ImageView
+                            android:id="@+id/image_FishMeal"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/fishmeal" />
+
+                        <TextView
+                            android:id="@+id/fishmeal_stock"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_horizontal"
+                            android:paddingLeft="20dp"
+                            android:text="Fish Meal"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/check_fishmeal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
                         android:background="#fff">
 
                         <ImageView
                             android:id="@+id/image_GroundnutCake"
                             android:layout_width="0dp"
                             android:layout_height="40dp"
-                            android:src="@drawable/groundnutcake" />
+                            android:src="@drawable/groundnut_cake" />
 
                         <TextView
                             android:id="@+id/groundnutcake_stock"
@@ -654,167 +574,135 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center" />
 
-                        <EditText
-                            android:id="@+id/editText_groundnutcake"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="center_horizontal"
-                            android:inputType="number" />
-
                     </TableRow>
-
-                    <!--<TableRow-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:background="#fff">-->
-
-                        <!--<ImageView-->
-                            <!--android:id="@+id/image_GuineaCorn"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="40dp"-->
-                            <!--android:src="@drawable/guineacorn" />-->
-
-                        <!--<TextView-->
-                            <!--android:id="@+id/guineacorn_stock"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:paddingLeft="20dp"-->
-                            <!--android:text="Guinea Corn"-->
-                            <!--android:textSize="12sp" />-->
-
-                        <!--<CheckBox-->
-                            <!--android:id="@+id/check_guineacorn"-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center" />-->
-
-                        <!--<EditText-->
-                            <!--android:id="@+id/editText_guineacorn"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:inputType="number" />-->
-
-                    <!--</TableRow>-->
-
-                    <!--<TableRow-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:background="#fff">-->
-
-                        <!--<ImageView-->
-                            <!--android:id="@+id/image_SoyabeanMeal"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="40dp"-->
-                            <!--android:src="@drawable/soyabeanmeal" />-->
-
-                        <!--<TextView-->
-                            <!--android:id="@+id/soyabeanmeal_stock"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:paddingLeft="20dp"-->
-                            <!--android:text="Soyabean Meal"-->
-                            <!--android:textSize="12sp" />-->
-
-                        <!--<CheckBox-->
-                            <!--android:id="@+id/check_soyabeanmeal"-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center" />-->
-
-                        <!--<EditText-->
-                            <!--android:id="@+id/editText_soyabeanmeal"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:inputType="number" />-->
-
-                    <!--</TableRow>-->
-
-                    <!--<TableRow-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:background="#fff">-->
-
-                        <!--<ImageView-->
-                            <!--android:id="@+id/image_PalmKernelCake"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="40dp"-->
-                            <!--android:src="@drawable/palmkernelcake" />-->
-
-                        <!--<TextView-->
-                            <!--android:id="@+id/palmkernelcake_stock"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:paddingLeft="20dp"-->
-                            <!--android:text="Palm Kernel cake"-->
-                            <!--android:textSize="12sp" />-->
-
-                        <!--<CheckBox-->
-                            <!--android:id="@+id/check_palmkernelcake"-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center" />-->
-
-                        <!--<EditText-->
-                            <!--android:id="@+id/editText_palmkernelcake"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:inputType="number" />-->
-
-                    <!--</TableRow>-->
-
-                    <!--<TableRow-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:background="#fff">-->
-
-                        <!--<ImageView-->
-                            <!--android:id="@+id/image_WheatBran"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="40dp"-->
-                            <!--android:src="@drawable/wheatbran" />-->
-
-                        <!--<TextView-->
-                            <!--android:id="@+id/wheatbran_stock"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:paddingLeft="20dp"-->
-                            <!--android:text="Wheat Bran"-->
-                            <!--android:textSize="12sp" />-->
-
-                        <!--<CheckBox-->
-                            <!--android:id="@+id/check_wheatbran"-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center" />-->
-
-                        <!--<EditText-->
-                            <!--android:id="@+id/editText_wheatbran"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:inputType="number" />-->
-
-                    <!--</TableRow>-->
 
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:background="#fff">
+
+                        <ImageView
+                            android:id="@+id/image_GuineaCorn"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/guineacorn" />
+
+                        <TextView
+                            android:id="@+id/guineacorn_stock"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_horizontal"
+                            android:paddingLeft="20dp"
+                            android:text="Guinea Corn"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/check_guineacorn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center" />
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:background="#fff">
+
+                        <ImageView
+                            android:id="@+id/image_SoyabeanMeal"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/soyabeanmeal" />
+
+                        <TextView
+                            android:id="@+id/soyabeanmeal_stock"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_horizontal"
+                            android:paddingLeft="20dp"
+                            android:text="Soyabean Meal"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/check_soyabeanmeal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center" />
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:background="#fff">
+
+                        <ImageView
+                            android:id="@+id/image_PalmKernelCake"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/palmkernelcake" />
+
+                        <TextView
+                            android:id="@+id/palmkernelcake_stock"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_horizontal"
+                            android:paddingLeft="20dp"
+                            android:text="Palm Kernel cake"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/check_palmkernelcake"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center" />
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:background="#fff">
+
+                        <ImageView
+                            android:id="@+id/image_WheatBran"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/wheatbran" />
+
+                        <TextView
+                            android:id="@+id/wheatbran_stock"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_horizontal"
+                            android:paddingLeft="20dp"
+                            android:text="Wheat Bran"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/check_wheatbran"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
                         android:background="#fff">
 
                         <ImageView
@@ -839,163 +727,130 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center" />
 
-                        <EditText
-                            android:id="@+id/editText_ricebran"
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:background="#fff">
+
+                        <ImageView
+                            android:id="@+id/image_Millet"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/millet" />
+
+                        <TextView
+                            android:id="@+id/millet_stock"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:gravity="center_horizontal"
-                            android:inputType="number" />
+                            android:paddingLeft="20dp"
+                            android:text="Millet"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/check_millet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center" />
+
 
                     </TableRow>
 
-                    <!--<TableRow-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:background="#fff">-->
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:background="#fff">
 
-                        <!--<ImageView-->
-                            <!--android:id="@+id/image_Millet"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="40dp"-->
-                            <!--android:src="@drawable/millet" />-->
+                        <ImageView
+                            android:id="@+id/image_MaizeBran"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/maizebran" />
 
-                        <!--<TextView-->
-                            <!--android:id="@+id/millet_stock"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:paddingLeft="20dp"-->
-                            <!--android:text="Millet"-->
-                            <!--android:textSize="12sp" />-->
+                        <TextView
+                            android:id="@+id/maizebran_stock"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_horizontal"
+                            android:paddingLeft="20dp"
+                            android:text="Maize Bran"
+                            android:textSize="12sp" />
 
-                        <!--<CheckBox-->
-                            <!--android:id="@+id/check_millet"-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center" />-->
+                        <CheckBox
+                            android:id="@+id/check_maizebran"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center" />
 
-                        <!--<EditText-->
-                            <!--android:id="@+id/editText_millet"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:inputType="number" />-->
 
-                    <!--</TableRow>-->
+                    </TableRow>
 
-                    <!--<TableRow-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:background="#fff">-->
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:background="#fff">
 
-                        <!--<ImageView-->
-                            <!--android:id="@+id/image_MaizeBran"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="40dp"-->
-                            <!--android:src="@drawable/maizebran" />-->
+                        <ImageView
+                            android:id="@+id/image_Sunflower"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/sunflower" />
 
-                        <!--<TextView-->
-                            <!--android:id="@+id/maizebran_stock"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:paddingLeft="20dp"-->
-                            <!--android:text="Maize Bran"-->
-                            <!--android:textSize="12sp" />-->
+                        <TextView
+                            android:id="@+id/sunflower_stock"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_horizontal"
+                            android:paddingLeft="20dp"
+                            android:text="Sunflower"
+                            android:textSize="12sp" />
 
-                        <!--<CheckBox-->
-                            <!--android:id="@+id/check_maizebran"-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center" />-->
+                        <CheckBox
+                            android:id="@+id/check_sunflower"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center" />
 
-                        <!--<EditText-->
-                            <!--android:id="@+id/editText_maizebran"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:inputType="number" />-->
 
-                    <!--</TableRow>-->
+                    </TableRow>
 
-                    <!--<TableRow-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:background="#fff">-->
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:background="#fff">
 
-                        <!--<ImageView-->
-                            <!--android:id="@+id/image_Sunflower"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="40dp"-->
-                            <!--android:src="@drawable/sunflower" />-->
+                        <ImageView
+                            android:id="@+id/image_Limestone"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/limestone" />
 
-                        <!--<TextView-->
-                            <!--android:id="@+id/sunflower_stock"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:paddingLeft="20dp"-->
-                            <!--android:text="Sunflower"-->
-                            <!--android:textSize="12sp" />-->
+                        <TextView
+                            android:id="@+id/limestone_stock"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_horizontal"
+                            android:paddingLeft="20dp"
+                            android:text="Limestone"
+                            android:textSize="12sp" />
 
-                        <!--<CheckBox-->
-                            <!--android:id="@+id/check_sunflower"-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center" />-->
-
-                        <!--<EditText-->
-                            <!--android:id="@+id/editText_sunflower"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:inputType="number" />-->
-
-                    <!--</TableRow>-->
-
-                    <!--<TableRow-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:background="#fff">-->
-
-                        <!--<ImageView-->
-                            <!--android:id="@+id/image_Limestone"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="40dp"-->
-                            <!--android:src="@drawable/limestone" />-->
-
-                        <!--<TextView-->
-                            <!--android:id="@+id/limestone_stock"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:paddingLeft="20dp"-->
-                            <!--android:text="Limestone"-->
-                            <!--android:textSize="12sp" />-->
-
-                        <!--<CheckBox-->
-                            <!--android:id="@+id/check_limestone"-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center" />-->
-
-                        <!--<EditText-->
-                            <!--android:id="@+id/editText_limestone"-->
-                            <!--android:layout_width="0dp"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center_vertical"-->
-                            <!--android:gravity="center_horizontal"-->
-                            <!--android:inputType="number" />-->
-
-                    <!--</TableRow>-->
+                        <CheckBox
+                            android:id="@+id/check_limestone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center" />
+                    </TableRow>
                 </TableLayout>
             </LinearLayout>
         </ScrollView>
@@ -1008,7 +863,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/background_2"
         android:onClick="openResultActivity"
         android:text="Formulate Diet"

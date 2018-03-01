@@ -19,9 +19,9 @@ import android.widget.ListView;
 import static android.R.attr.button;
 
 public class MainActivity extends AppCompatActivity {
-    private Button buttonBrooder, buttonLayer, buttonGrower;
     Context context = this;
     com.chickendiet.chickendiet.DbHelper dbHelper;
+    private Button buttonBrooder, buttonLayer, buttonGrower;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,16 +30,16 @@ public class MainActivity extends AppCompatActivity {
         dbHelper = new com.chickendiet.chickendiet.DbHelper(this);
         dbHelper.deletingsinlecrop_whole();
 
-        buttonBrooder = (Button)findViewById(R.id.btn_brooder);
+        buttonBrooder = findViewById(R.id.btn_brooder);
         buttonBrooder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String[] items = {"Formulate Diet"};
+                final String[] items = {"Details"};
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setItems(items, new DialogInterface.OnClickListener(){
                     @Override
                     public void onClick(DialogInterface dialog, int item){
-                       Intent intent = new Intent(MainActivity.this, FormulateActivity.class);
+                        Intent intent = new Intent(MainActivity.this, BrooderDetails.class);
                         startActivity(intent);
                     }
                 });
@@ -48,16 +48,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        buttonLayer = (Button)findViewById(R.id.btn_layer);
+        buttonLayer = findViewById(R.id.btn_layer);
         buttonLayer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String[] items = {"Formulate Diet"};
+                final String[] items = {"Details"};
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setItems(items, new DialogInterface.OnClickListener(){
                     @Override
                     public void onClick(DialogInterface dialog, int item){
-                        Intent intent = new Intent(MainActivity.this, FormulateActivity.class);
+                        Intent intent = new Intent(MainActivity.this, LayerDetails.class);
                         startActivity(intent);
                     }
                 });
@@ -66,16 +66,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        buttonGrower = (Button)findViewById(R.id.btn_grower);
+        buttonGrower = findViewById(R.id.btn_grower);
         buttonGrower.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String[] items = {"Formulate Diet"};
+                final String[] items = {"Details"};
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setItems(items, new DialogInterface.OnClickListener(){
                     @Override
                     public void onClick(DialogInterface dialog, int item){
-                        Intent intent = new Intent(MainActivity.this, FormulateActivity.class);
+                        Intent intent = new Intent(MainActivity.this, GrowerDetails.class);
                         startActivity(intent);
                     }
                 });
@@ -85,9 +85,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-
-        BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.navigation);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
