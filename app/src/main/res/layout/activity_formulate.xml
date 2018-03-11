@@ -327,7 +327,7 @@
                             android:textSize="12sp" />
 
                         <CheckBox
-                            android:id="@+id/check_rice"
+                            android:id="@+id/check_brewersDriedGrain"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center" />
@@ -347,7 +347,7 @@
                             android:src="@drawable/acha" />
 
                         <TextView
-                            android:id="@+id/sorghum_stock"
+                            android:id="@+id/acha_stock"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
@@ -357,7 +357,7 @@
                             android:textSize="12sp" />
 
                         <CheckBox
-                            android:id="@+id/check_sorghum"
+                            android:id="@+id/check_acha"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center" />
@@ -387,7 +387,7 @@
                             android:textSize="12sp" />
 
                         <CheckBox
-                            android:id="@+id/check_soyabean"
+                            android:id="@+id/check_bloodmeal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center" />

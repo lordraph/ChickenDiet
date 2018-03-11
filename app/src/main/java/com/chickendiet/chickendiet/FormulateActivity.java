@@ -11,9 +11,13 @@ import android.widget.Toast;
 
 public class FormulateActivity extends AppCompatActivity {
     boolean ismaize_chk, isrice_grain_chk, isrice_bran_chk,issorghum_chk,iscake_chk, iscotton_chk,issesame_chk,isbean_seeds_chk;
+    boolean isbonemeal_chk, iscottonseed_chk,isbrewers_chk,isacha_chk, isbloodmeal_chk, iscassavameal_chk, iscassavapeel_chk, iscottonseedmeal_chk, isbeniseed_chk, isfishmeal_chk, isgroundnutcake_chk, isguinea_chk, issoyebeanmeal_chk, ispalmkernel, iswheatbran,ismillet, ismaizebran,issunflower, islimestone;
     boolean isLayer_chk, isGrower_chk, isBrooder_chk;
     CheckBox checkGrower, checkLayer, checkBrooder;
-    CheckBox maize_chk, rice_grain_chk, rice_bran_chk,sorghum_chk,cake_chk, cotton_chk,sesame_chk,bean_seeds_chk;
+    CheckBox bonemeal_chk, brewersDriedGrain_chk, acha_chk, maize_chk, rice_grain_chk;
+    CheckBox rice_bran_chk,sorghum_chk,cake_chk, cotton_chk,sesame_chk,bean_seeds_chk;
+    CheckBox bloodmeal_chk, cassavameal_chk,cassavapeel_chk, beniseed_chk, fishmeal_chk,guinea_chk, maizebrain_chk, cottonseedmeal;
+    CheckBox soyabeanmeal_chk, palmkernelcake_chk, wheatbran_chk, ricebran_chk, millet_chk, sunflower_chk, limestone_chk;
     com.chickendiet.chickendiet.DbHelper dbHelper;
 
 
@@ -28,12 +32,28 @@ public class FormulateActivity extends AppCompatActivity {
         checkBrooder = findViewById(R.id.check_brooder);
 
         maize_chk = findViewById(R.id.check_maize);
-        rice_grain_chk = findViewById(R.id.check_rice);
+        bonemeal_chk = findViewById(R.id.check_bonemeal);
         rice_bran_chk = findViewById(R.id.check_ricebran);
-        sorghum_chk = findViewById(R.id.check_sorghum);
+        brewersDriedGrain_chk = findViewById(R.id.check_brewersDriedGrain);
         cake_chk = findViewById(R.id.check_groundnutcake);
         cotton_chk = findViewById(R.id.check_cotton_seed);
-        bean_seeds_chk = findViewById(R.id.check_soyabean);
+        acha_chk = findViewById(R.id.check_acha);
+
+        bloodmeal_chk = findViewById(R.id.check_bloodmeal);
+        cassavameal_chk = findViewById(R.id.check_cassavameal);
+        cassavapeel_chk = findViewById(R.id.check_cassavapeel);
+        beniseed_chk = findViewById(R.id.check_beniseed);
+        fishmeal_chk = findViewById(R.id.check_fishmeal);
+        guinea_chk = findViewById(R.id.check_guineacorn);
+        soyabeanmeal_chk = findViewById(R.id.check_soyabeanmeal);
+
+        palmkernelcake_chk = findViewById(R.id.check_palmkernelcake);
+        wheatbran_chk = findViewById(R.id.check_wheatbran);
+        millet_chk = findViewById(R.id.check_millet);
+        sunflower_chk = findViewById(R.id.check_sunflower);
+        limestone_chk = findViewById(R.id.check_limestone);
+        maizebrain_chk = findViewById(R.id.check_maizebran);
+        cottonseedmeal = findViewById(R.id.check_cottonseedmeal);
 
         selectChicken();
         checkSelectedCrop();
@@ -49,16 +69,28 @@ public class FormulateActivity extends AppCompatActivity {
                 if(isChecked){
                     ismaize_chk = true;
                     dbHelper.insertdata("Maize",0);
-//                    isnonechecked = true;
-//                    Cursor cursor = dbHelper.querry_Selector_table();
-//                    Toast.makeText(FormulateActivity.this,"No of rows: " + cursor.getCount(),Toast.LENGTH_SHORT).show();
 
                 }else {
                     if(ismaize_chk){
                         dbHelper.deletingsinlecrop("Maize");
                     }
                     ismaize_chk = false;
-//                    isnonechecked = false;
+                }
+            }
+        });
+
+        bonemeal_chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    isbonemeal_chk = true;
+                    dbHelper.insertdata("Bone Meal",0);
+
+                }else {
+                    if(isbonemeal_chk){
+                        dbHelper.deletingsinlecrop("Bone Meal");
+                    }
+                    isbonemeal_chk = false;
                 }
             }
         });
@@ -69,14 +101,12 @@ public class FormulateActivity extends AppCompatActivity {
                 if(isChecked){
                     isrice_grain_chk = true;
                     dbHelper.insertdata("Rice grains",0);
-//                    isnonechecked = true;
 
                 }else {
                     if(isrice_grain_chk){
                         dbHelper.deletingsinlecrop("Rice grains");
                     }
                     isrice_grain_chk = false;
-//                    isnonechecked = false;
                 }
             }
         });
@@ -87,14 +117,12 @@ public class FormulateActivity extends AppCompatActivity {
                 if(isChecked){
                     isrice_bran_chk = true;
                     dbHelper.insertdata("Rice bran",0);
-//                    isnonechecked = true;
 
                 }else {
                     if(isrice_bran_chk){
                         dbHelper.deletingsinlecrop("Rice bran");
                     }
                     isrice_bran_chk = false;
-//                    isnonechecked = false;
                 }
             }
         });
@@ -105,13 +133,11 @@ public class FormulateActivity extends AppCompatActivity {
                 if(isChecked){
                     issorghum_chk = true;
                     dbHelper.insertdata("Sorghum grains",0);
-//                    isnonechecked = true;
                 }else {
                     if(issorghum_chk){
                         dbHelper.deletingsinlecrop("Sorghum grains");
                     }
                     issorghum_chk = false;
-//                    isnonechecked = false;
                 }
             }
         });
@@ -122,13 +148,11 @@ public class FormulateActivity extends AppCompatActivity {
                 if(isChecked){
                     iscake_chk = true;
                     dbHelper.insertdata("Groundnut cake",0);
-//                    isnonechecked = true;
                 }else {
                     if(iscake_chk){
                         dbHelper.deletingsinlecrop("Groundnut cake");
                     }
                     iscake_chk = false;
-//                    isnonechecked = false;
                 }
             }
         });
@@ -139,13 +163,11 @@ public class FormulateActivity extends AppCompatActivity {
                 if(isChecked){
                     iscotton_chk = true;
                     dbHelper.insertdata("Cotton seed",0);
-//                    isnonechecked = true;
                 }else {
                     if(iscotton_chk){
                         dbHelper.deletingsinlecrop("Cotton seed");
                     }
                     iscotton_chk = false;
-//                    isnonechecked = false;
                 }
             }
         });
@@ -156,13 +178,11 @@ public class FormulateActivity extends AppCompatActivity {
                 if(isChecked){
                     isbean_seeds_chk = true;
                     dbHelper.insertdata("Soybean seeds (heat processed)",0);
-//                    isnonechecked = true;
                 }else {
                     if(isbean_seeds_chk){
                         dbHelper.deletingsinlecrop("Soybean seeds (heat processed)");
                     }
                     isbean_seeds_chk = false;
-//                    isnonechecked = false;
                 }
             }
         });
@@ -189,7 +209,6 @@ public class FormulateActivity extends AppCompatActivity {
                         dbHelper.update_bird_selection("bird",0);
                     }
                 }
-//                Toast.makeText(FormulateActivity.this,"Grower" + isGrower_chk,Toast.LENGTH_SHORT).show();;
 
             }
         });
@@ -211,7 +230,6 @@ public class FormulateActivity extends AppCompatActivity {
                         dbHelper.update_bird_selection("bird",0);
                     }
                 }
-//                Toast.makeText(FormulateActivity.this,"Layer" + isGrower_chk,Toast.LENGTH_SHORT).show();;
             }
         });
 
@@ -232,7 +250,6 @@ public class FormulateActivity extends AppCompatActivity {
                         dbHelper.update_bird_selection("bird",0);
                     }
                 }
-//                Toast.makeText(FormulateActivity.this,"Brooder" + isGrower_chk,Toast.LENGTH_SHORT).show();;
             }
         });
 

@@ -27,12 +27,14 @@ public class DbHelper extends SQLiteOpenHelper {
 
     private static final String TABLE_NAME_NUTRIENT_CONTENT = "nutrient_crop";
     private static final String COLUMN_NUTRIENT_CLASS = "nutrient_class";
-    private static final String COLUMN_ENERGY_CONTENT = "energy";
-    private static final String COLUMN_PROTEIN_CONTENT= "protein";
-    private static final String COLUMN_ETHER_EXTRACT_CONTENT = "ether_extract";
+    private static final String COLUMN_PROTEIN_CONTENT = "protein";
+    private static final String COLUMN_ENERGY_CONTENT= "energy";
     private static final String COLUMN_CRUDE_FIBRE_CONTENT = "fibre";
-    private static final String COLUMN_CALCIUM_CONTENT = "Qty_Avail";
-    private static final String COLUMN_PHOSPHORUS_CONTENT= "price";
+    private static final String COLUMN_LYSINE_CONTENT = "lysine";
+    private static final String COLUMN_METHIONINE_CONTENT = "methionine";
+    private static final String COLUMN_CALCIUM_CONTENT= "calcium";
+    private static final String COLUMN_PHOSPHORUS_CONTENT= "phosphorus";
+    private static final String COLUMN_FAT_CONTENT= "fat";
 
     private static final String TABLE_NAME_NUTRIENT_REQUIREMENT = "nutrient_requirement";
     private static final String COLUMN_BIRD_CLASS = "bird_class";
@@ -73,7 +75,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
         String bird_table = "create table " + TABLE_NAME_BIRD_SELECTION + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_BIRD_CATEGORY + " TEXT," + COLUMN_NO_FORMULATION + " INTEGER)";
 
-        String CROP_NUTRIENT_TABLE = "create table " + TABLE_NAME_NUTRIENT_CONTENT + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,nutrient_class TEXT, energy INTEGER,protein REAL,ether_extract REAL,fibre REAL,Qty_Avail REAL,price REAL)" ;
+        String CROP_NUTRIENT_TABLE = "create table " + TABLE_NAME_NUTRIENT_CONTENT + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,nutrient_class TEXT, protein REAL, energy INTEGER,fibre REAL,lysine REAL,methionine REAL,calcium REAL, phosphorus REAL, fat REAL)" ;
 
         String NUTRIENT_REQUIREMENT_TABLE = "create table " + TABLE_NAME_NUTRIENT_REQUIREMENT + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,bird_class TEXT,energy INTEGER,protein REAL,phosphorus REAL,calcium REAL)" ;
 
@@ -95,22 +97,23 @@ public class DbHelper extends SQLiteOpenHelper {
 
         db.execSQL("INSERT INTO " + TABLE_NAME_FORM_NO + " (No_times) VALUES (0)");
 
-        db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,energy,protein,ether_extract,fibre,Qty_Avail,price) VALUES ('Maize',3350,8.5,3.8,2.2,30,200.00)");
-
-        db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,energy,protein,ether_extract,fibre,Qty_Avail,price) VALUES ('Rice grains',2990,8.7,0.7,9.8,20,450.00)");
-
-        db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,energy,protein,ether_extract,fibre,Qty_Avail,price) VALUES ('Rice bran',2980,12.9,13,11.4,25,400.00)");
-
-        db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,energy,protein,ether_extract,fibre,Qty_Avail,price) VALUES ('Sorghum grains',3288,8.8,2.9,2.3,50,100.00)");
-
-        db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,energy,protein,ether_extract,fibre,Qty_Avail,price) VALUES ('Groundnut cake',2500,42,7.3,12,150,350.00)");
-        db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,energy,protein,ether_extract,fibre,Qty_Avail,price) VALUES ('Cotton seed',2320,40.9,3.9,12,120,120.00)");
-
-        db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,energy,protein,ether_extract,fibre,Qty_Avail,price) VALUES ('Sesame seed or meal',2210,43.8,6.5,7,70,200.00)");
-        db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,energy,protein,ether_extract,fibre,Qty_Avail,price) VALUES ('Soybean seeds (heat processed)',3300,37,18,5.5,80,500.00)");
-        db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_REQUIREMENT + " (bird_class,energy,protein,phosphorus,calcium) VALUES ('Brooder',2800,18,0.40,0.80)");
-        db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_REQUIREMENT + " (bird_class,energy,protein,phosphorus,calcium) VALUES ('Grower',2900,16.0,0.33,0.65)");
-        db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_REQUIREMENT + " (bird_class,energy,protein,phosphorus,calcium) VALUES ('Layer',2900,17,0.32,3.40)");
+//        db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,energy,protein,ether_extract,fibre,Qty_Avail,price) VALUES ('Maize',3350,8.5,3.8,2.2,30,200.00)");
+//
+//        db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,energy,protein,ether_extract,fibre,Qty_Avail,price) VALUES ('Rice grains',2990,8.7,0.7,9.8,20,450.00)");
+//
+//        db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,energy,protein,ether_extract,fibre,Qty_Avail,price) VALUES ('Rice bran',2980,12.9,13,11.4,25,400.00)");
+//
+//        db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,energy,protein,ether_extract,fibre,Qty_Avail,price) VALUES ('Sorghum grains',3288,8.8,2.9,2.3,50,100.00)");
+//
+//        db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,energy,protein,ether_extract,fibre,Qty_Avail,price) VALUES ('Groundnut cake',2500,42,7.3,12,150,350.00)");
+//        db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,energy,protein,ether_extract,fibre,Qty_Avail,price) VALUES ('Cotton seed',2320,40.9,3.9,12,120,120.00)");
+//
+//        db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,energy,protein,ether_extract,fibre,Qty_Avail,price) VALUES ('Sesame seed or meal',2210,43.8,6.5,7,70,200.00)");
+//        db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,energy,protein,ether_extract,fibre,Qty_Avail,price) VALUES ('Soybean seeds (heat processed)',3300,37,18,5.5,80,500.00)");
+//
+//        db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_REQUIREMENT + " (bird_class,energy,protein,phosphorus,calcium) VALUES ('Brooder',2800,18,0.40,0.80)");
+//        db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_REQUIREMENT + " (bird_class,energy,protein,phosphorus,calcium) VALUES ('Grower',2900,16.0,0.33,0.65)");
+//        db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_REQUIREMENT + " (bird_class,energy,protein,phosphorus,calcium) VALUES ('Layer',2900,17,0.32,3.40)");
 
 
     }
