@@ -11,13 +11,15 @@ import android.widget.Toast;
 
 public class FormulateActivity extends AppCompatActivity {
     boolean ismaize_chk, isrice_grain_chk, isrice_bran_chk,issorghum_chk,iscake_chk, iscotton_chk,issesame_chk,isbean_seeds_chk;
-    boolean isbonemeal_chk, iscottonseed_chk,isbrewers_chk,isacha_chk, isbloodmeal_chk, iscassavameal_chk, iscassavapeel_chk, iscottonseedmeal_chk, isbeniseed_chk, isfishmeal_chk, isgroundnutcake_chk, isguinea_chk, issoyebeanmeal_chk, ispalmkernel, iswheatbran,ismillet, ismaizebran,issunflower, islimestone;
+    boolean isbonemeal_chk, iscottonseed_chk,isbrewers_chk,isacha_chk, isbloodmeal_chk, iscassavameal_chk, iscassavapeel_chk;
+    boolean isbeniseed_chk, isfishmeal_chk, isgroundnutcake_chk, isguinea_chk, issoyebeanmeal_chk, iscottonseedmeal_chk;
+    boolean ispalmkernel, iswheatbran,ismillet, ismaizebran,issunflower, islimestone;
     boolean isLayer_chk, isGrower_chk, isBrooder_chk;
     CheckBox checkGrower, checkLayer, checkBrooder;
     CheckBox bonemeal_chk, brewersDriedGrain_chk, acha_chk, maize_chk, rice_grain_chk;
     CheckBox rice_bran_chk,sorghum_chk,cake_chk, cotton_chk,sesame_chk,bean_seeds_chk;
     CheckBox bloodmeal_chk, cassavameal_chk,cassavapeel_chk, beniseed_chk, fishmeal_chk,guinea_chk, maizebrain_chk, cottonseedmeal;
-    CheckBox soyabeanmeal_chk, palmkernelcake_chk, wheatbran_chk, ricebran_chk, millet_chk, sunflower_chk, limestone_chk;
+    CheckBox soyabeanmeal_chk, palmkernelcake_chk, wheatbran_chk, millet_chk, sunflower_chk, limestone_chk;
     com.chickendiet.chickendiet.DbHelper dbHelper;
 
 
@@ -36,7 +38,7 @@ public class FormulateActivity extends AppCompatActivity {
         rice_bran_chk = findViewById(R.id.check_ricebran);
         brewersDriedGrain_chk = findViewById(R.id.check_brewersDriedGrain);
         cake_chk = findViewById(R.id.check_groundnutcake);
-        cotton_chk = findViewById(R.id.check_cotton_seed);
+//        cotton_chk = findViewById(R.id.check_cotton_seed);
         acha_chk = findViewById(R.id.check_acha);
 
         bloodmeal_chk = findViewById(R.id.check_bloodmeal);
@@ -94,6 +96,283 @@ public class FormulateActivity extends AppCompatActivity {
                 }
             }
         });
+
+        //Setting up for cassava meal crop selection
+        cassavameal_chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    iscassavameal_chk = true;
+                    dbHelper.insertdata("Cassava Meal",0);
+
+                }else {
+                    if(iscassavameal_chk){
+                        dbHelper.deletingsinlecrop("Cassava Meal");
+                    }
+                    iscassavameal_chk = false;
+                }
+            }
+        });
+
+        //Setting up for cassava peel crop selection
+        cassavapeel_chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    iscassavapeel_chk = true;
+                    dbHelper.insertdata("Cassava Peel",0);
+
+                }else {
+                    if(iscassavapeel_chk){
+                        dbHelper.deletingsinlecrop("Cassava Peel");
+                    }
+                    iscassavapeel_chk = false;
+                }
+            }
+        });
+
+
+        //Setting up for beniseed crop selection
+        beniseed_chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    isbeniseed_chk = true;
+                    dbHelper.insertdata("Beniseed",0);
+
+                }else {
+                    if(isbeniseed_chk){
+                        dbHelper.deletingsinlecrop("Beniseed");
+                    }
+                    isbeniseed_chk = false;
+                }
+            }
+        });
+
+        //Setting up for fish meal crop selection
+        fishmeal_chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    isfishmeal_chk = true;
+                    dbHelper.insertdata("Fish Meal",0);
+
+                }else {
+                    if(isfishmeal_chk){
+                        dbHelper.deletingsinlecrop("Fish Meal");
+                    }
+                    isfishmeal_chk = false;
+                }
+            }
+        });
+
+        //Setting up for guinea corn crop selection
+        guinea_chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    isguinea_chk = true;
+                    dbHelper.insertdata("Guinea Corn",0);
+
+                }else {
+                    if(isguinea_chk){
+                        dbHelper.deletingsinlecrop("Guinea Corn");
+                    }
+                    isguinea_chk = false;
+                }
+            }
+        });
+
+
+        //Setting up for maize bran crop selection
+        maizebrain_chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    ismaizebran = true;
+                    dbHelper.insertdata("Maize Bran",0);
+
+                }else {
+                    if(ismaizebran){
+                        dbHelper.deletingsinlecrop("Maize Bran");
+                    }
+                    ismaizebran = false;
+                }
+            }
+        });
+
+
+        //Setting up for cotton seed meal crop selection
+        cottonseedmeal.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    iscottonseedmeal_chk = true;
+                    dbHelper.insertdata("Cotton Seed Meal",0);
+
+                }else {
+                    if(iscottonseedmeal_chk){
+                        dbHelper.deletingsinlecrop("Cotton Seed Meal");
+                    }
+                    iscottonseedmeal_chk = false;
+                }
+            }
+        });
+
+        //Setting up for soyabean  crop selection
+        soyabeanmeal_chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    issoyebeanmeal_chk = true;
+                    dbHelper.insertdata("Soyabean Meal",0);
+
+                }else {
+                    if(issoyebeanmeal_chk){
+                        dbHelper.deletingsinlecrop("Soyabean Meal");
+                    }
+                    issoyebeanmeal_chk = false;
+                }
+            }
+        });
+
+        //Setting up for palm kernel  crop selection
+        palmkernelcake_chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    ispalmkernel = true;
+                    dbHelper.insertdata("Palm Kernel Cake",0);
+
+                }else {
+                    if(ispalmkernel){
+                        dbHelper.deletingsinlecrop("Palm Kernel Cake");
+                    }
+                    ispalmkernel = false;
+                }
+            }
+        });
+
+
+        //Setting up for wheat bran  crop selection
+        wheatbran_chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    iswheatbran = true;
+                    dbHelper.insertdata("Wheat Bran",0);
+
+                }else {
+                    if(iswheatbran){
+                        dbHelper.deletingsinlecrop("Wheat Bran");
+                    }
+                    iswheatbran = false;
+                }
+            }
+        });
+
+        //Setting up for millet crop selection
+        millet_chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    ismillet = true;
+                    dbHelper.insertdata("Millet",0);
+
+                }else {
+                    if(ismillet){
+                        dbHelper.deletingsinlecrop("Millet");
+                    }
+                    ismillet = false;
+                }
+            }
+        });
+
+        //Setting up for sunflower crop selection
+        sunflower_chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    issunflower = true;
+                    dbHelper.insertdata("Sunflower",0);
+
+                }else {
+                    if(issunflower){
+                        dbHelper.deletingsinlecrop("Sunflower");
+                    }
+                    issunflower = false;
+                }
+            }
+        });
+
+        //Setting up for limestone crop selection
+        limestone_chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    islimestone = true;
+                    dbHelper.insertdata("Limestone",0);
+
+                }else {
+                    if(islimestone){
+                        dbHelper.deletingsinlecrop("Limestone");
+                    }
+                    islimestone = false;
+                }
+            }
+        });
+
+        //Setting up for acha crop selection
+        acha_chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    isacha_chk = true;
+                    dbHelper.insertdata("Acha",0);
+
+                }else {
+                    if(isacha_chk){
+                        dbHelper.deletingsinlecrop("Acha");
+                    }
+                    isacha_chk = false;
+                }
+            }
+        });
+
+        //Setting up for blood meal crop selection
+        bloodmeal_chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    isbloodmeal_chk = true;
+                    dbHelper.insertdata("Blood Meal",0);
+
+                }else {
+                    if(isbloodmeal_chk){
+                        dbHelper.deletingsinlecrop("Blood Meal");
+                    }
+                    isbloodmeal_chk = false;
+                }
+            }
+        });
+
+        //Setting up for brewers dried grain crop selection
+        brewersDriedGrain_chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    isbrewers_chk = true;
+                    dbHelper.insertdata("Brewers Dry Grain",0);
+
+                }else {
+                    if(isbrewers_chk){
+                        dbHelper.deletingsinlecrop("Brewers Dry Grain");
+                    }
+                    isbrewers_chk = false;
+                }
+            }
+        });
+
 
         rice_grain_chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
