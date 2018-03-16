@@ -26,9 +26,11 @@ import static java.lang.String.valueOf;
 public class ResultActivity extends AppCompatActivity {
     com.chickendiet.chickendiet.DbHelper dbHelper;
     TableLayout tableLayout;
-    TextView textView_energy_required, textView_protein_required, textView_ether_required, textview_fibre_required;
-    TextView textView_energy_used, textView_protein_used, textView_ether_used, textview_fibre_used, total_ingridient, total_cost_required;
-    TextView energy_status, protein_status, ether_status, fibre_status, required_qty;
+//    TextView textView_energy_required, textView_protein_required, textView_lysine, textView_methionine;
+//    TextView textview_fibre_required, textView_calcium, textView_phosphorus, textView_fat;
+    TextView textView_energy_used, textView_protein_used, textView_lysine_used, textView_fat_used,textView_phosphorus_used;
+    TextView textview_fibre_used, total_ingridient, total_cost_required, textView_methionine_used, textView_calcium_used;
+//    TextView energy_status, protein_status, ether_status, fibre_status, required_qty;
     ArrayList<EditText> newarraylist;
     ArrayList<TextView> textViewArrayList;
     ArrayList<Double> proteinArrayList, etherArrayList, fibreArrayList,priceArrayList;
@@ -45,24 +47,24 @@ public class ResultActivity extends AppCompatActivity {
         dbHelper = new com.chickendiet.chickendiet.DbHelper(this);
         tableLayout = (TableLayout)findViewById(R.id.ingridient_table);
 
-        textView_energy_required = (TextView)findViewById(R.id.energy_required);
-        textView_protein_required = (TextView)findViewById(R.id.protein_required);
-        textView_ether_required = (TextView)findViewById(R.id.ether_required);
-        textview_fibre_required = (TextView)findViewById(R.id.fibre_required);
-        total_cost_required = (TextView)findViewById(R.id.total_required);
+//        textView_energy_required = (TextView)findViewById(R.id.energy_required);
+//        textView_protein_required = (TextView)findViewById(R.id.protein_required);
+//        textView_lysine = (TextView)findViewById(R.id.lys);
+//        textview_fibre_required = (TextView)findViewById(R.id.fibre_required);
+//        total_cost_required = (TextView)findViewById(R.id.total_required);
 
         textView_energy_used = (TextView)findViewById(R.id.energy_used);
         textView_protein_used = (TextView)findViewById(R.id.protein_used);
-        textView_ether_used = (TextView)findViewById(R.id.ether_used);
+        textView_lysine_used = (TextView)findViewById(R.id.lysine_used);
         textview_fibre_used = (TextView)findViewById(R.id.fibre_used);
         total_ingridient = (TextView)findViewById(R.id.total_used);
 
 
-        energy_status = (TextView)findViewById(R.id.energy_status);
-        protein_status = (TextView)findViewById(R.id.protein_status);
-        ether_status = (TextView)findViewById(R.id.ether_status);
-        fibre_status = (TextView)findViewById(R.id.fibre_status);
-        required_qty = (TextView)findViewById(R.id.total_status);
+//        energy_status = (TextView)findViewById(R.id.energy_status);
+//        protein_status = (TextView)findViewById(R.id.protein_status);
+//        ether_status = (TextView)findViewById(R.id.ether_status);
+//        fibre_status = (TextView)findViewById(R.id.fibre_status);
+//        required_qty = (TextView)findViewById(R.id.total_status);
 
 
         generateCrop();
@@ -288,8 +290,8 @@ public class ResultActivity extends AppCompatActivity {
 
                 if (textView.getText().toString().equals(whole_table.getString(1))){
 //                           Toast.makeText(FeedFormulation.this, "text 3: "+ whole_table.getString(1),Toast.LENGTH_SHORT).show();
-                    energyArrayList.add(whole_table.getInt(2));
-                    proteinArrayList.add(whole_table.getDouble(3));
+                    energyArrayList.add(whole_table.getInt(3));
+                    proteinArrayList.add(whole_table.getDouble(2));
                     etherArrayList.add(whole_table.getDouble(4));
                     fibreArrayList.add(whole_table.getDouble(5));
                     priceArrayList.add(whole_table.getDouble(7));

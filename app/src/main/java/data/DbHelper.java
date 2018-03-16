@@ -116,27 +116,27 @@ public class DbHelper extends SQLiteOpenHelper {
 //        db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_REQUIREMENT + " (bird_class,energy,protein,phosphorus,calcium) VALUES ('Layer',2900,17,0.32,3.40)");
 
 
-db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,fat) VALUES ('Acha',7.42,3939,0.35,0,0,0,0.32,13)");
- db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,fat) VALUES ('Blood Meal',80,3080,10,6.9,101,0.28,0.28,10)");
- db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,fat) VALUES ('Brewers Dry Grain',27.90,2513,11.70,0.90,0,30,0.88,7.4)");
- db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,fat) VALUES ('Bone Meal',0,0,0,0,0,37,15,0)");
- db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,fat) VALUES ('Cashew Nut Meal ',40.9,0,150,0.86,0.35,0.06,1.72,13)");
- db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,fat) VALUES ('Cassava Meal',2.50,3909,3.50,0.04,0.022,0.18,0.19,0.3)");
- db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,fat) VALUES ('Cassava Peel',5.00,2423,9.50,0,0,0,0,5.8)");
- db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,fat) VALUES ('Cotton Seed Meal',25,2079,25.10,0.54,5.30,0.15,0.90,1.50)");
- db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,fat) VALUES ('Beniseed',25,5820,6.30,3.50,3.80,1.06,0.47,49.1)");
- db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,fat) VALUES ('Fish Meal',65,2860,1.00,4.60,2.80,6.10,3.00,4.50)");
- db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,fat) VALUES ('Groundnut Cake',45,2540,5.00,1.60,0.48,0.20,0.20,6.00)");
- db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,fat) VALUES ('Maize',8.90,3432,2.00,0.25,0.18,0.01,0.09,3.70)");
- db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,fat) VALUES ('Guinea Corn',11.00,3300,6.00,0.35,0.10,0.04,0.32,2.00)");
- db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,fat) VALUES ('Soyabean Meal',44.00,2700,6.50,2.80,0.59,0.20,0.60,0.80)");
- db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,fat) VALUES ('Palm Kernel Cake',18.00,2175,12.00,0.64,0.39,0.21,0.16,6.00)");
- db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,fat) VALUES ('Wheat Bran',16,1870,8.50,0.90,0.25,0.10,0.30,1.90)");
- db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,fat) VALUES ('Rice Bran',13.00,1892,12.50,0.50,0.24,0.06,1.80,15)");
- db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,fat) VALUES ('Millet',11.50,2984,6.50,0.23,0.15,0.05,0.30,3.60)");
- db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,fat) VALUES ('Maize Bran',11.50,-2784,10.50,0,0,0,0,170)");
- db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,fat) VALUES ('Sunflower',41.00,2310,13.00,1.52,0.72,0.43,1.0,28.0)");
- db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,fat) VALUES ('Limestone',0,0,0,0,0,35.00,0.05,0)");
+db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,phosphorus, fat) VALUES ('Acha',7.42,3939,0.35,0,0,0,0.32,13)");
+ db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,phosphorus,fat) VALUES ('Blood Meal',80,3080,10,6.9,101,0.28,0.28,10)");
+ db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,phosphorus,fat) VALUES ('Brewers Dry Grain',27.90,2513,11.70,0.90,0,30,0.88,7.4)");
+ db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,phosphorus,fat) VALUES ('Bone Meal',0,0,0,0,0,37,15,0)");
+ db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,phosphorus,fat) VALUES ('Cashew Nut Meal ',40.9,0,150,0.86,0.35,0.06,1.72,13)");
+ db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,phosphorus,fat) VALUES ('Cassava Meal',2.50,3909,3.50,0.04,0.022,0.18,0.19,0.3)");
+ db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,phosphorus,fat) VALUES ('Cassava Peel',5.00,2423,9.50,0,0,0,0,5.8)");
+ db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,phosphorus,fat) VALUES ('Cotton Seed Meal',25,2079,25.10,0.54,5.30,0.15,0.90,1.50)");
+ db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,phosphorus,fat) VALUES ('Beniseed',25,5820,6.30,3.50,3.80,1.06,0.47,49.1)");
+ db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,phosphorus,fat) VALUES ('Fish Meal',65,2860,1.00,4.60,2.80,6.10,3.00,4.50)");
+ db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,phosphorus,fat) VALUES ('Groundnut Cake',45,2540,5.00,1.60,0.48,0.20,0.20,6.00)");
+ db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,phosphorus,fat) VALUES ('Maize',8.90,3432,2.00,0.25,0.18,0.01,0.09,3.70)");
+ db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,phosphorus,fat) VALUES ('Guinea Corn',11.00,3300,6.00,0.35,0.10,0.04,0.32,2.00)");
+ db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,phosphorus,fat) VALUES ('Soyabean Meal',44.00,2700,6.50,2.80,0.59,0.20,0.60,0.80)");
+ db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,phosphorus,fat) VALUES ('Palm Kernel Cake',18.00,2175,12.00,0.64,0.39,0.21,0.16,6.00)");
+ db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,phosphorus,fat) VALUES ('Wheat Bran',16,1870,8.50,0.90,0.25,0.10,0.30,1.90)");
+ db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,phosphorus,fat) VALUES ('Rice Bran',13.00,1892,12.50,0.50,0.24,0.06,1.80,15)");
+ db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,phosphorus,fat) VALUES ('Millet',11.50,2984,6.50,0.23,0.15,0.05,0.30,3.60)");
+ db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,phosphorus,fat) VALUES ('Maize Bran',11.50,-2784,10.50,0,0,0,0,170)");
+ db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,phosphorus,fat) VALUES ('Sunflower',41.00,2310,13.00,1.52,0.72,0.43,1.0,28.0)");
+ db.execSQL("INSERT INTO " + TABLE_NAME_NUTRIENT_CONTENT + " (nutrient_class,protein,energy,fibre,lysine,methionine,calcium,phosphorus,fat) VALUES ('Limestone',0,0,0,0,0,35.00,0.05,0)");
     }
 
 

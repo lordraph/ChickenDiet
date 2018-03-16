@@ -536,7 +536,7 @@ public class FormulateActivity extends AppCompatActivity {
 
     public void openResultActivity(View view) {
 
-        if((ismaize_chk || isrice_grain_chk || isrice_bran_chk || issorghum_chk || iscake_chk || iscotton_chk || issesame_chk || isbean_seeds_chk)){
+        if(( ismaize_chk||isrice_grain_chk||isrice_bran_chk||issorghum_chk||iscake_chk||iscotton_chk||issesame_chk||isbean_seeds_chk||isbonemeal_chk|| iscottonseed_chk||isbrewers_chk||isacha_chk|| isbloodmeal_chk|| iscassavameal_chk|| iscassavapeel_chk||isbeniseed_chk||isfishmeal_chk||isgroundnutcake_chk||isguinea_chk||issoyebeanmeal_chk||iscottonseedmeal_chk||ispalmkernel|| iswheatbran||ismillet|| ismaizebran||issunflower||islimestone)){
             if((isLayer_chk||isGrower_chk||isBrooder_chk)){
                 Intent intent = new Intent(this, ResultActivity.class);
                 startActivity(intent);
