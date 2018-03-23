@@ -33,7 +33,8 @@ public class ResultActivity extends AppCompatActivity {
 //    TextView energy_status, protein_status, ether_status, fibre_status, required_qty;
     ArrayList<EditText> newarraylist;
     ArrayList<TextView> textViewArrayList;
-    ArrayList<Double> proteinArrayList, etherArrayList, fibreArrayList,priceArrayList;
+    ArrayList<Double> proteinArrayList, lysineArrayList, fibreArrayList,priceArrayList;
+    ArrayList<Double> calciumArrayList, phosphorusArrayList, methionineArrayList,fatArrayList;
     ArrayList<Integer> energyArrayList;
     TextWatcher textWatcher;
     double total_protein_used, total_ether_used, total_fibre_used,total_energy_used;
@@ -53,6 +54,10 @@ public class ResultActivity extends AppCompatActivity {
 //        textview_fibre_required = (TextView)findViewById(R.id.fibre_required);
 //        total_cost_required = (TextView)findViewById(R.id.total_required);
 
+        textView_calcium_used = (TextView)findViewById(R.id.calcium_used);
+        textView_fat_used = (TextView)findViewById(R.id.fat_used);
+        textView_phosphorus_used = (TextView)findViewById(R.id.phosphorus_used);
+        textView_methionine_used = (TextView)findViewById(R.id.methionine_used);
         textView_energy_used = (TextView)findViewById(R.id.energy_used);
         textView_protein_used = (TextView)findViewById(R.id.protein_used);
         textView_lysine_used = (TextView)findViewById(R.id.lysine_used);
@@ -68,27 +73,27 @@ public class ResultActivity extends AppCompatActivity {
 
 
         generateCrop();
-        load_nutrient_content();
+//        load_nutrient_content();
         autocalc();
         loadContent();
 
     }
 
-    public void load_nutrient_content(){
-        Cursor load_bird_type = dbHelper.querry_bird_selector();
-        load_bird_type.moveToFirst();
-        String bird_type = load_bird_type.getString(1);
-        Cursor bird_requirement = dbHelper.querry_table_requirement();
-        while(bird_requirement.moveToNext()){
-            if(bird_requirement.getString(1).equals(bird_type)){
-                textView_energy_required.setText(valueOf(bird_requirement.getInt(2)));
-                textView_protein_required.setText(valueOf(bird_requirement.getDouble(3)));
-                textView_ether_required.setText(valueOf(bird_requirement.getDouble(4)));
-                textview_fibre_required.setText(valueOf(bird_requirement.getDouble(5)));
-            }
-        }
-
-    }
+//    public void load_nutrient_content(){
+//        Cursor load_bird_type = dbHelper.querry_bird_selector();
+//        load_bird_type.moveToFirst();
+//        String bird_type = load_bird_type.getString(1);
+//        Cursor bird_requirement = dbHelper.querry_table_requirement();
+//        while(bird_requirement.moveToNext()){
+//            if(bird_requirement.getString(1).equals(bird_type)){
+//                textView_energy_required.setText(valueOf(bird_requirement.getInt(2)));
+//                textView_protein_required.setText(valueOf(bird_requirement.getDouble(3)));
+//                textView_ether_required.setText(valueOf(bird_requirement.getDouble(4)));
+//                textview_fibre_required.setText(valueOf(bird_requirement.getDouble(5)));
+//            }
+//        }
+//
+//    }
 
     public void autocalc(){
 
@@ -133,7 +138,11 @@ public class ResultActivity extends AppCompatActivity {
         int crop_edit_no;
         double sum_protein = 0;
         double sum_energy = 0;
-        double sum_ether = 0;
+        double sum_lysine = 0;
+        double sum_fat = 0;
+        double sum_calcium = 0;
+        double sum_phosphorus = 0;
+        double sum_methionine = 0;
         double sum_fibre = 0;
 
 
@@ -163,9 +172,13 @@ public class ResultActivity extends AppCompatActivity {
             }
             sum_energy = sum_energy + (Double.valueOf(energyArrayList.get(i)) * ((double)crop_edit_no / 100.00));
             sum_protein = sum_protein + (((double) crop_edit_no / 100.00) * (proteinArrayList.get(i)));
-            sum_ether = sum_ether + (((double)crop_edit_no / 100.00) * etherArrayList.get(i));
+            sum_lysine = sum_lysine + (((double)crop_edit_no / 100.00) * lysineArrayList.get(i));
             sum_fibre = sum_fibre + (((double)crop_edit_no / 100.00) * (fibreArrayList.get(i)));
-            price_values = price_values + ((double)crop_edit_no * priceArrayList.get(i));
+            sum_fat = sum_fibre + (((double)crop_edit_no / 100.00) * (fatArrayList.get(i)));
+            sum_calcium = sum_fibre + (((double)crop_edit_no / 100.00) * (calciumArrayList.get(i)));
+            sum_phosphorus = sum_fibre + (((double)crop_edit_no / 100.00) * (phosphorusArrayList.get(i)));
+            sum_methionine = sum_fibre + (((double)crop_edit_no / 100.00) * (methionineArrayList.get(i)));
+//            price_values = price_values + ((double)crop_edit_no * priceArrayList.get(i));
 
         }
 
@@ -174,97 +187,101 @@ public class ResultActivity extends AppCompatActivity {
         DecimalFormat decimalFormat = new DecimalFormat("0.00");
         textView_energy_used.setText(decimalFormat.format(sum_energy));
         textView_protein_used.setText(decimalFormat.format(sum_protein));
-        textView_ether_used.setText(decimalFormat.format(sum_ether));
+        textView_fat_used.setText(decimalFormat.format(sum_fat));
         textview_fibre_used.setText(decimalFormat.format(sum_fibre));
+        textView_methionine_used.setText(decimalFormat.format(sum_methionine));
+        textView_lysine_used.setText(decimalFormat.format(sum_lysine));
+        textView_calcium_used.setText(decimalFormat.format(sum_calcium));
+        textView_phosphorus_used.setText(decimalFormat.format(sum_phosphorus));
         total_ingridient.setText(decimalFormat.format(total));
-        total_cost_required.setText(decimalFormat.format(price_values));
+//        total_cost_required.setText(decimalFormat.format(price_values));
 
 
         //Store the result
-        total_energy_used = sum_energy;
-        total_protein_used = sum_protein;
-        total_ether_used = sum_ether;
-        total_fibre_used = sum_fibre;
+//        total_energy_used = sum_energy;
+//        total_protein_used = sum_protein;
+//        total_ether_used = sum_lysine;
+//        total_fibre_used = sum_fibre;
 
-        //Display the status
+//        //Display the status
+//
+//        double energy_required_no;
+//
+//        double protein_required_no;
+//
+//        double ether_required_no;
+//
+//        double fibre_required_no;
+//
+//
+//
+//        energy_required_no = Double.valueOf(textView_energy_required.getText().toString());
+//        protein_required_no = Double.valueOf(textView_protein_required.getText().toString());
+//        ether_required_no = Double.valueOf(textView_ether_required.getText().toString());
+//        fibre_required_no = Double.valueOf(textview_fibre_required.getText().toString());
 
-        double energy_required_no;
 
-        double protein_required_no;
-
-        double ether_required_no;
-
-        double fibre_required_no;
-
-
-
-        energy_required_no = Double.valueOf(textView_energy_required.getText().toString());
-        protein_required_no = Double.valueOf(textView_protein_required.getText().toString());
-        ether_required_no = Double.valueOf(textView_ether_required.getText().toString());
-        fibre_required_no = Double.valueOf(textview_fibre_required.getText().toString());
-
-
-        if(sum_energy == energy_required_no){
-            energy_status.setText("Appropriate");
-            energy_status.setTextColor(Color.GREEN);
-        }else if (sum_energy < energy_required_no){
-            energy_status.setText("Deficient");
-            energy_status.setTextColor(Color.RED);
-        }else if (sum_energy > energy_required_no){
-            energy_status.setText("Excess");
-            energy_status.setTextColor(Color.RED);
-        }
+//        if(sum_energy == energy_required_no){
+//            energy_status.setText("Appropriate");
+//            energy_status.setTextColor(Color.GREEN);
+//        }else if (sum_energy < energy_required_no){
+//            energy_status.setText("Deficient");
+//            energy_status.setTextColor(Color.RED);
+//        }else if (sum_energy > energy_required_no){
+//            energy_status.setText("Excess");
+//            energy_status.setTextColor(Color.RED);
+//        }
 
 //               Toast.makeText(FeedFormulation.this, "energery_required: "+ energy_required_no,Toast.LENGTH_SHORT).show();
 //               Toast.makeText(FeedFormulation.this, "sum_energy: "+ energy_required_no,Toast.LENGTH_SHORT).show();
 
-        if(sum_protein == protein_required_no){
-            protein_status.setText("Appropriate");
-            protein_status.setTextColor(Color.GREEN);
-        }else if (sum_protein < protein_required_no){
-            protein_status.setText("Deficient");
-            protein_status.setTextColor(Color.RED);
-        }else if (sum_protein > protein_required_no){
-            protein_status.setText("Excess");
-            protein_status.setTextColor(Color.RED);
-        }
+//        if(sum_protein == protein_required_no){
+//            protein_status.setText("Appropriate");
+//            protein_status.setTextColor(Color.GREEN);
+//        }else if (sum_protein < protein_required_no){
+//            protein_status.setText("Deficient");
+//            protein_status.setTextColor(Color.RED);
+//        }else if (sum_protein > protein_required_no){
+//            protein_status.setText("Excess");
+//            protein_status.setTextColor(Color.RED);
+//        }
 
 
-
-        if(sum_ether == ether_required_no){
-            ether_status.setText("Appropriate");
-            ether_status.setTextColor(Color.GREEN);
-        }else if (sum_ether < ether_required_no){
-            ether_status.setText("Deficient");
-            ether_status.setTextColor(Color.RED);
-        }else if (sum_ether > ether_required_no){
-            ether_status.setText("Excess");
-            ether_status.setTextColor(Color.RED);
-        }
-
-
-        if(sum_fibre == fibre_required_no){
-            fibre_status.setText("Appropriate");
-            fibre_status.setTextColor(Color.GREEN);
-        }else if (sum_fibre < fibre_required_no){
-            fibre_status.setText("Deficient");
-            fibre_status.setTextColor(Color.RED);
-        }else if (sum_fibre > fibre_required_no){
-            fibre_status.setText("Excess");
-            fibre_status.setTextColor(Color.RED);
-        }
+//
+//        if(sum_ether == ether_required_no){
+//            ether_status.setText("Appropriate");
+//            ether_status.setTextColor(Color.GREEN);
+//        }else if (sum_ether < ether_required_no){
+//            ether_status.setText("Deficient");
+//            ether_status.setTextColor(Color.RED);
+//        }else if (sum_ether > ether_required_no){
+//            ether_status.setText("Excess");
+//            ether_status.setTextColor(Color.RED);
+//        }
 
 
-        if(total == 100){
-            required_qty.setText("Appropriate");
-            required_qty.setTextColor(Color.GREEN);
-        }else if (total < 100){
-            required_qty.setText("Deficient");
-            required_qty.setTextColor(Color.RED);
-        }else if (total > 100){
-            required_qty.setText("Excess");
-            required_qty.setTextColor(Color.RED);
-        }
+//        if(sum_fibre == fibre_required_no){
+//            fibre_status.setText("Appropriate");
+//            fibre_status.setTextColor(Color.GREEN);
+//        }else if (sum_fibre < fibre_required_no){
+//            fibre_status.setText("Deficient");
+//            fibre_status.setTextColor(Color.RED);
+//        }else if (sum_fibre > fibre_required_no){
+//            fibre_status.setText("Excess");
+//            fibre_status.setTextColor(Color.RED);
+//        }
+//
+//
+//        if(total == 100){
+//            required_qty.setText("Appropriate");
+//            required_qty.setTextColor(Color.GREEN);
+//        }else if (total < 100){
+//            required_qty.setText("Deficient");
+//            required_qty.setTextColor(Color.RED);
+//        }else if (total > 100){
+//            required_qty.setText("Excess");
+//            required_qty.setTextColor(Color.RED);
+//        }
 
 
         //cost price
@@ -276,10 +293,14 @@ public class ResultActivity extends AppCompatActivity {
 
     public void loadContent(){
         proteinArrayList = new ArrayList<>();
-        etherArrayList = new ArrayList<>();
+        lysineArrayList = new ArrayList<>();
         fibreArrayList = new ArrayList<>();
         energyArrayList =  new ArrayList<>();
-        priceArrayList = new ArrayList<>();
+        fatArrayList = new ArrayList<>();
+        calciumArrayList = new ArrayList<>();
+        phosphorusArrayList = new ArrayList<>();
+        methionineArrayList =  new ArrayList<>();
+//        priceArrayList = new ArrayList<>();
 
         for(TextView textView:textViewArrayList){
             Cursor whole_table = dbHelper.querry_table_content();
@@ -290,11 +311,15 @@ public class ResultActivity extends AppCompatActivity {
 
                 if (textView.getText().toString().equals(whole_table.getString(1))){
 //                           Toast.makeText(FeedFormulation.this, "text 3: "+ whole_table.getString(1),Toast.LENGTH_SHORT).show();
-                    energyArrayList.add(whole_table.getInt(3));
-                    proteinArrayList.add(whole_table.getDouble(2));
-                    etherArrayList.add(whole_table.getDouble(4));
-                    fibreArrayList.add(whole_table.getDouble(5));
-                    priceArrayList.add(whole_table.getDouble(7));
+                    energyArrayList.add(whole_table.getInt(2));
+                    proteinArrayList.add(whole_table.getDouble(1));
+                    lysineArrayList.add(whole_table.getDouble(4));
+                    fibreArrayList.add(whole_table.getDouble(3));
+                    methionineArrayList.add(whole_table.getDouble(5));
+                    calciumArrayList.add(whole_table.getDouble(6));
+                    phosphorusArrayList.add(whole_table.getDouble(7));
+                    fatArrayList.add(whole_table.getDouble(8));
+//                    priceArrayList.add(whole_table.getDouble(7));
                 }
             }
 
